@@ -1,10 +1,20 @@
-pipeline{
-stages{
-stage{
-steps{
-echo "hi world."
-ls -al
+peline {
+    agent any
+    stages {
+         
+            steps {
+                sh 'echo "hello world."'
+				sh 'ls -hl'
+            }
+        }
+    }
 }
-}
-}
-}
+
+
+
+
+
+
+
+
+
