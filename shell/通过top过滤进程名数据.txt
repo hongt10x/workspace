@@ -1,0 +1,14 @@
+#!/bin/bash
+
+__process_name=$1
+while true:
+do
+	clear
+	__arg=$(pgrep -d',' -f __process_name)
+	if [ -z "__arg" ];then
+		top -c |head -5
+	else
+		top -c -n 1 -p ${__arg}
+	fi
+	sleep 2
+done

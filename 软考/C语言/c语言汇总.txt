@@ -1,0 +1,606 @@
+#include <stdio.h>
+//#include <Windows.h>
+#include <stdlib.h>
+	
+int main05 () {
+	int i =173;
+	
+	printf("%d\n",i/100);
+	printf("%d\n",i/10%10);
+	printf("%d\n",i%10);
+	return 0;
+}	
+
+int main06(){
+	int i ;
+	do {
+	
+		printf("----------");
+		printf("%d\n",i);
+		i++;
+		
+	}
+	while(i<10);
+	return 0;
+}
+
+
+
+int main07(void){
+	int i,j,k;
+	for(i=0;i<24;i++){
+	
+		for(j=0;j<60;j++){
+		
+			for(k=0;k<60;k++){
+				printf("%d : &d : %d",i,j,k);
+				//Sleep(960);
+				system("cls");
+			}
+		}
+	}
+	
+}
+
+int main11(){
+
+	int arr[10];
+	arr[0]=11;
+	arr[4]=12.1;
+	printf("%d\n",arr[4]);
+
+}
+
+int main(void){
+
+
+	int arr[3][2] = {
+	
+		{33,43},
+		{44,22},
+		{55,89}
+	};
+	
+	int i,j;
+	for (i=0;i<3;i++){
+		int sum=0;
+	
+		for (j=0;j<2;j++){
+			//printf("i=%d j=%d\n",i,j);
+		
+			//printf("%d  ",arr[i][j]);
+			sum += arr[i][j];
+			
+		}
+		printf("第%d学生的总成绩：%d\n",i+1,sum);
+		//printf("\n");
+	
+	}
+	
+	printf("\n\n");
+	
+	for(i=0;i<2;i++){
+		int sum=0;
+		for(j=0;j<3;j++){
+		
+			sum += arr[j][i];
+		}
+		printf("第%d门功课的总成绩为：%d\n",i+1, sum);
+	}
+	
+	char arr1[5]={'h','e','l','l','o'};
+	char arr2[5]="hello";
+	printf("%s",arr1);
+	printf("\n");
+	printf("%s",arr2);
+	
+	
+	return 0;
+}
+
+
+#include <stdio.h>
+#include <time.h>
+	
+int main () {
+	int i;
+	int random_num;
+	//生成随机数种子
+	srand((unsigned int)time(NULL));
+	
+	random_num = rand() % 100 + 1;
+	while(1){
+		scanf("请输入你要猜的数字: \n",&i);
+		if(i<random_num){
+			printf("你猜的数字太小了。\n");
+		}else if(i >random_num){
+			printf("你猜的数字太大了。\n");
+		}else{
+			printf("你猜中了。\n");
+			return 0;
+		}
+	}
+	
+	return 0;
+}
+
+
+#include <stdio.h>
+int low(int, int);
+
+extern int max(int ,int);
+int main () {
+	printf("hello https://tool.lu/\n");
+	int value = max(10,200);
+	printf("value=%d\n",value);
+	value = low(10,200);
+	printf("value=%d\n",value);
+	return 0;
+}
+
+
+int low(int a ,int b){
+
+	return a<b ? a : b;
+}
+
+int max(int a ,int b){
+
+	return a>b ? a : b;
+}
+
+
+
+#include <stdio.h>
+
+
+void bubble_sort(int arr[], int len){
+
+	int temp,i,j;
+	for (i=0;i<len-1;i++){
+	
+		for(j=0;j<len-1-i;j++){
+		
+			if (arr[j]>arr[j+1]){
+			
+				temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp;
+			}
+		}
+	}
+	return;
+}
+	
+int main () {
+	int arr[] = {2,3,45,67,42,1,454,9,88,32};
+	int i;
+	bubble_sort(arr,8);
+	for (i=0;i<10;i++){
+	
+		printf("%d\n",arr[i]);
+	}
+	return 0;
+}
+
+
+
+#include <stdio.h>
+	
+
+void fun(int a){
+
+	if(a==0)
+		return;
+	fun(a-1);
+	printf("%d\n",a);
+}
+	
+	
+int main(void){
+	int a = 10;
+	fun(a);
+	return 0;
+	
+}
+
+
+
+#include <stdio.h>
+
+
+void bubble_sort(int * arr, int len){
+
+	int temp,i,j;
+	for (i=0;i<len-1;i++){
+	
+		for(j=0;j<len-1-i;j++){
+		
+			if (arr[j]>arr[j+1]){
+			
+				temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp;
+			}
+		}
+	}
+	return;
+}
+	
+int main () {
+	int arr[] = {2,3,45,67,42,1,454,9,88,32};
+	int i;
+	bubble_sort(arr,10);
+	for (i=0;i<10;i++){
+	
+		printf("%d\n",arr[i]);
+	}
+	return 0;
+}
+
+#include <stdio.h>
+
+int main () {
+	int a=10;
+	int b=20;
+	int c=30;
+	int* arr[]={&a,&b,&c};
+	printf("%d\n",*arr[2]);
+	printf("%d\n",c);
+	*arr[2] = 123;
+	printf("%d\n",*arr[2]);
+	printf("%d\n",c);
+	return 0;
+}
+
+
+
+
+#include <stdio.h>
+
+int main () {
+	int a=10;
+	int b=20;
+	int* p1 = &a;
+	int* q1 = &b;
+	printf("p1=%p\n",p1);
+	printf("q1=%p\n",q1);
+	int** p2 = &p1;
+	printf("p2=%p\n",p2);
+	//勉强将一级指针赋值给二级指针程序会提示指针类型不匹配的报错：p2=q1;
+	p2 = q1;
+	printf("p2=%p\n",p2);
+	printf("a=%d\n",a);
+	printf("*p2=%d\n",*p2);
+	return 0;
+}
+
+
+
+
+#include <stdio.h>
+
+int main () {
+	int a=10;
+	int b=20;
+	int* p1 = &a;
+	int* q1 = &b;
+	printf("p1=%p\n",p1);
+	printf("q1=%p\n",q1);
+	int** p2 = &p1;
+	printf("p2=%p\n",p2);
+	printf("**p2=%d\n",**p2);
+	//勉强将一级指针赋值给二级指针程序会提示指针类型不匹配的报错：p2=q1;
+
+	return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main () {
+	int a=10;
+	int b=20;
+	int* p1 = &a;
+	int* q1 = &b;
+	printf("p1=%p\n",p1);
+	printf("q1=%p\n",q1);
+	int** p2 = &p1;
+	printf("p2=%p\n",p2);
+	printf("*p2=%p\n",*p2);
+	//勉强将一级指针赋值给二级指针程序会提示指针类型不匹配的报错：p2=q1;
+
+	return 0;
+}
+
+
+
+#include <stdio.h>
+
+//define 可以定义字符常量和表达式，发生在代码检查阶段
+#define PI 3.14
+#define MAX(a,b) (((a)>(b)) ? (a) : (b))
+
+//发生在编译阶段，只能对字符类型进行别名，不能定义表达式
+typedef unsigned int ui;
+typedef double de;
+
+int main () {
+	ui a=10;
+	ui b =30;
+	de c=12;
+	printf("最大值：%d\n",MAX(a,b));
+	printf("%d\n",a);
+	printf("%f\n",c);
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+//define 可以定义字符常量和表达式，发生在代码检查阶段
+#define PI 3.14
+#define MAX(a,b) (((a)>(b)) ? (a) : (b))
+
+//发生在编译阶段，只能对字符类型进行别名，不能定义表达式
+typedef unsigned int ui;
+typedef double de;
+
+struct stu{
+
+	int id;
+	char name[32];
+	int age;
+	char addr[55];
+};
+
+typedef struct student{
+
+	int id;
+	char name[21];
+	int score;
+}stu1;
+
+int main (void) {
+	ui a=10;
+	ui b =30;
+	de c=12;
+	printf("最大值：%d\n",MAX(a,b));
+	printf("%d\n",a);
+	printf("%f\n",c);
+	
+	struct stu ss = {1001,"小王",28,"北京市昌平区朱辛庄321号"};
+	printf("%d %s %d %s\n",ss.id,ss.name,ss.age,ss.addr);
+	
+	ss.id= 2222;
+	ss.age = 36;
+	//ss.name = "老王"; //ss.name对应的是数组[0]常量元素，不能进行赋值修改
+	strcpy(ss.name,"老王头");
+	printf("%d %s %d %s\n",ss.id,ss.name,ss.age,ss.addr);
+	
+	
+	stu1 st={3001,"小王1",80};
+	printf("%d %s %d\n",st.id,st.name,st.score);
+	
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include <string.h>
+	
+struct person{
+	char name[33];
+};
+
+struct killer{
+	struct person p;
+
+	int id;
+	int score;
+};
+
+
+int main (void) {
+	
+	struct killer k;
+	k.id = 1001;
+	k.score =100;
+	strcpy(k.p.name,"唐僧");
+	
+	printf("%s\n",k.p.name);
+	printf("%d\n",k.id);
+	printf("%d\n",k.score);
+	return 0;
+}
+
+
+
+#include <iostream>
+
+	using namespace std;
+
+int main() {
+	int a =10;
+	cout << "请输入a的值" <<a<< endl;
+	int b = a;
+	cout << "请输入a的值" <<a<< endl;
+	cout << "请输入b的值" <<b<< endl;
+	{
+	cout << "bye" << endl;
+	}
+	
+	switch(a)
+	{
+	
+		case 10|11:
+			cout <<"谢谢谢谢谢谢" <<endl;break;
+		default:
+			cout <<"没有" <<endl;break;
+	}
+	
+	int i=0;
+	do 
+	{
+		cout <<"神仙1: "<<i <<endl;
+		i++;
+	}while(i<10);
+	
+	i=0;
+	while(i<10){
+	cout <<"神仙2: "<<i <<endl;
+		i++;
+		
+	}
+	
+	//cin >>a;
+	//cout << "a的值为: "<<a<<endl;
+	return 0;
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int arr[2][3]={
+	
+		{1,2,3},
+		{4,5,6}
+	};
+	
+	int arr2[][3] = {1,2,3,4,5,6};
+	
+	cout << "arr:"<<arr2[0] << endl;
+	cout << "arr:"<<arr2[0][1] << endl;
+	cout << "arr:"<<&arr2[0][0] << endl;
+	return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int a=10;
+	int b=20;
+	cout<<"a="<<a<<endl;
+	cout<<"b="<<b<<endl;
+	a = a^b;
+	b=a^b;
+	a=a^b;
+	cout<<"a="<<a<<endl;
+	cout<<"b="<<b<<endl;
+	return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+void swap1(int *p1,int *p2){
+
+	int tmp = *p1;
+	*p1 = *p2;
+	*p2 = tmp;
+	
+}
+
+
+void swap(int *p1,int *p2){
+
+	int *tmp = p1;
+	p1 = p2;
+	p2 = tmp;
+	cout <<"swap a地址"<<p1<<"  swap b地址"<<p2<<endl;
+}
+
+
+int main() {
+	
+	int a =10;
+	int b=20;
+	cout <<"a地址"<<&a<<"  b地址"<<&b<<endl;
+	swap(&a,&b);
+	cout <<"a="<<a<<"  b="<<b<<endl;
+
+
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include <string.h>
+struct Test{
+	char name[22];
+	int age;
+};
+int main() {
+	struct Test t1[2] = {
+		{"张三",11},
+		{"李四",19}
+	};
+	printf("%s %d \n",t1[0].name,t1[0].age);
+	printf("%s %d \n",t1[1].name,t1[1].age);
+	strcpy(t1[0].name,"老子");
+	t1[0].age = 22;
+	printf("%s %d\n",t1[0].name,t1[0].age);
+	return 0;
+}
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+struct Stu{
+
+	string name;
+	int age;
+};
+int main() {
+	Stu s1 = {"张三",12};
+	
+	Stu *p = &s1;
+	
+	cout << p->name<<"  "<<p->age << endl;
+	return 0;
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+//#define e 10
+int a=10;
+static int b=10;
+const int a1=10;
+int main() {
+	static int c=10; 
+	int d = 10;
+	const int b1=10;
+	//cout << "常量的地址："<< e << endl;
+	cout << "全局变量a的地址："<< &a << endl;
+	cout << "静态全局变量b的地址："<< &b << endl;
+	cout << "静态局变量c的地址："<< &c << endl;
+	cout << "局变量c的地址："<< &d << endl;
+	cout << "全局常量a1的地址："<< &a1 <<endl;
+	
+	cout << "局部常量b1的地址："<< &b1 <<endl;
+	return 0;
+}
+
+
+
+

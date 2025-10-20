@@ -1,0 +1,20 @@
+# None 的真假值是 False
+print(bool(None))
+# 输出 False
+
+# 一个空字符串（""）的真假值是 False
+print(bool(""))
+# 输出 False
+
+# 一个空字符串或任何可迭代对象的真假值是 False
+print(bool([]))
+# 输出 False
+
+# 0 {int (0), float (0.0) 和 complex (0j)} 的真假值是 False
+print(bool(0))
+# 输出 False
+
+
+
+zip 函数能轻松地并行迭代两个或更多可迭代对象，它返回的元
+组可以拆包成变量，分别对应各个并行输入中的一个元素。

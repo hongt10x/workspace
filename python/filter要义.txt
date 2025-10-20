@@ -1,0 +1,7 @@
+如果将 filter() 函数的第一个参数 function 的值设置为 None，就会默认去除序列中所有值为假的元素，如 None、False、0、’’、()、[] 和 {}等
+
+
+a1 = [1,"",0,"C",None,{},False,3.14,{"x":9},' ',(),[],"abc"]
+print(list(filter(None,a1)))
+
+#[1, 'C', 3.14, {'x': 9}, ' ', 'abc']
